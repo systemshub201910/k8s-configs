@@ -4,7 +4,7 @@ metadata:
   name: fortune-env-from-configmap
 spec:
   containers:
-  - image: luksa/fortune:env
+  - image: k8schandra/fortune:env
     env:
     - name: INTERVAL
       valueFrom: 
