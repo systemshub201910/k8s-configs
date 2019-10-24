@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: batch-job-test
+spec:
+  ttlSecondsAfterFinished: 0
+  template:
+    metadata:
+      labels:
+        app: batch-job1
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: main
+        image: k8schandra/batchjob
+
+

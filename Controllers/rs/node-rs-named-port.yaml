@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: node-rs
+  labels: 
+    app: node
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      name: node
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: k8schandra/nodeapp:v1
+        ports:
+        - name: http
+          containerPort: 8080
+        - name: https
+          containerPort: 8443

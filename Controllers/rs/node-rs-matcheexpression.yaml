@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: node-rs-match-expression
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+         - node-match
+  template:
+    metadata:
+      labels:
+        app: node-match
+    spec:
+      containers:
+      - name: node
+        image: k8schandra/nodeapp:v1

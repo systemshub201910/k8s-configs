@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: multi-complet-parallel-job
+spec:
+  ttlSecondsAfterFinished: 60
+  completions: 5
+  parallelism: 2
+  template:
+    metadata:
+      labels:
+        app: batch-job
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: main
+        image: k8schandra/batchjob
+
+

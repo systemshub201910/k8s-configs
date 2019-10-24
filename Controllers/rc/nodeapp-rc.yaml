@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: node-rc
+spec:
+  replicas: 3
+  selector:
+    app: nodeapp
+    deployment: v1
+  template:
+    metadata:
+      labels:
+        app: nodeapp
+        deployment: v1
+    spec:
+      containers:
+      - name: nodeapp
+        image: k8schandra/nodeapp:v1
+        ports:
+        - containerPort: 8080

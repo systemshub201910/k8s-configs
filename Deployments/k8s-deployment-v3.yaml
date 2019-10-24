@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: node
+spec:
+  replicas: 3
+  minReadySeconds: 10
+  template:
+    metadata:
+      name: node
+      labels:
+        app: node
+    spec:
+      containers:
+      - image: k8schandra/node:v3
+        name: nodejs

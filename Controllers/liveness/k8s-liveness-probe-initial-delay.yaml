@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-liveness
+spec:
+  containers:
+  - image: k8schandra/node-unhealthy
+    name: node-unhealthy
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 15
+
