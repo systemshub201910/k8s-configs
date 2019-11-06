@@ -16,4 +16,3 @@ spec:
   - name: mongodb-data
     persistentVolumeClaim:
       claimName: mongodb-pvc
-

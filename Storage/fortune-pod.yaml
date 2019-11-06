@@ -4,7 +4,7 @@ metadata:
   name: fortune
 spec:
   containers:
-  - image: k8schandra/fortune
+  - image: k8schandra/fortuneloop
     name: html-generator
     volumeMounts:
     - name: html
@@ -20,5 +20,6 @@ spec:
       protocol: TCP
   volumes:
   - name: html
-    emptyDir: {}
+    emptyDir: 
+      medium: Memory
 

@@ -9,3 +9,6 @@ spec:
   accessModes:
   - ReadWriteOnce
   storageClassName: ""
+  selector:
+    matchLabels:
+      type: gcppd 

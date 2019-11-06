@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: mongodb 
 spec:
+  nodeSelector:
+    disk: SSD
   volumes:
   - name: mongodb-data
     hostPath:
