@@ -1,0 +1,8 @@
+#1. Create a POD with huge requests which doesn't fit in any of the node
+
+$kubectl run requests-pod-2 --image=busybox --restart Never --requests='cpu=800m,memory=20Mi' -- dd if=/dev/zero of=/dev/null
+
+$kubectl describe node
+
+
+

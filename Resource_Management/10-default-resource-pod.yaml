@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: default-range
+  name: default-range
+spec:
+  containers:
+  - image: k8schandra/nodeapp:v1
+    imagePullPolicy: IfNotPresent
+    name: default-range
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
