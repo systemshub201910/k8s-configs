@@ -1,15 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: shoppingcart-netpolicy
+  name: kube-dns-netpolicy
 spec:
   podSelector:
     matchLabels:
-      app: shopping-cart 
+      k8s-app: kube-dns
   ingress:
   - from:
     - namespaceSelector:
         matchLabels:
-          tenant: manning
-    ports:
-    - port: 80
+          ns: default

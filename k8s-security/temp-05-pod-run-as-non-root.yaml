@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-run-as-non-root
+  name: pod-run-as-non-root-webserver
   labels:
-    app: non-root
+    app: webserver
 spec:
   containers:
   - name: main

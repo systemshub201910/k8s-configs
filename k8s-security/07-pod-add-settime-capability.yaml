@@ -11,3 +11,10 @@ spec:
       capabilities:
         add:
         - SYS_TIME
+    volumeMounts:
+     - name: tz-india
+       mountPath: /etc/localtime
+  volumes:
+    - name: tz-india
+      hostPath:
+        path: /usr/share/zoneinfo/Asia/Kolkata

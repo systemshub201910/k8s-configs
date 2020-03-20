@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: curl-custom-sa
+  name: curl-custom-sa-test
 spec:
-  serviceAccountName: chandrab
+  serviceAccount: test
   containers:
   - name: main
     image: tutum/curl
