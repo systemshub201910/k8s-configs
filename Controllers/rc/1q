@@ -1,0 +1,11 @@
+kind: ReplicationController
+metadata:
+  name: node-rc
+  labels:
+    rc: nodeapp
+apiVersion: v1
+spec:
+  replicas: 3
+  selector:
+    app: nodeapp
+    deployment: v1

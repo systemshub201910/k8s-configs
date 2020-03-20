@@ -4,7 +4,7 @@ metadata:
   name: node-hostport
 spec:
   containers:
-  - image: k8schandra/node
+  - image: k8schandra/node:v1
     name: node
     ports:
     - containerPort: 8080

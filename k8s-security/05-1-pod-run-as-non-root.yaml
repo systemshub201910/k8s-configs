@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-run-as-non-root
-  labels:
-    app: non-root
+  name: pod-run-as-non-root-chandra
 spec:
   containers:
   - name: main
-    image: alpine
+    image: k8schandra/ubuntu-with-user:chandra
     command: ["/bin/sleep", "999999"]
+    imagePullPolicy: Always
     securityContext:
       runAsNonRoot: true
-      runAsUser: 405

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: fortune-https
+  labels:
+    app: fortune
 spec:
   containers:
   - image: k8schandra/fortune:env
@@ -10,8 +12,8 @@ spec:
     - name: INTERVAL
       valueFrom: 
         configMapKeyRef:
-          name: fortune-config
-          key: sleep-interval
+          name: fortune-sleep
+          key: sleep-intervel
     volumeMounts:
     - name: html
       mountPath: /var/htdocs
